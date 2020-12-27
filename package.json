@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "description": "Common javascrpit functions / objects",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "dist/"
   ],
   "scripts": {
     "test": "echo \"No test to run.\"",
-    "build": "echo \"No build process defined yet.\""
+    "build": "rm -rf dist/* && cp src/* dist/"
   },
   "repository": {
     "type": "git",
