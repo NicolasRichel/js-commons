@@ -1,6 +1,6 @@
 {
   "name": "@nrl/js-commons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Common javascrpit functions / objects",
   "main": "index.js",
   "types": "index.d.ts",
