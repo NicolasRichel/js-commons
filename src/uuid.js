@@ -10,7 +10,7 @@ const uuidVersions = Object.freeze({
  * @returns {String}
  */
 function generateUUID(version = uuidVersions.V4) {
-  const uuid = null;
+  let uuid = null;
   switch (version) {
     case uuidVersions.V4:
     default:

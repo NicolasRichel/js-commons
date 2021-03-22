@@ -2,14 +2,18 @@
   "name": "@nrl/js-commons",
   "version": "0.0.2",
   "description": "Common javascrpit functions / objects",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "types": "index.d.ts",
   "files": [
     "dist/"
   ],
   "scripts": {
     "test": "echo \"No test to run.\"",
-    "build": "rm -rf dist/* && cp src/* dist/"
+    "clean": "rm -rf dist/*",
+    "build": "npm run clean && esbuild index.js --outfile=dist/bundle.js --format=esm --bundle",
+    "build:dev": "npm run build -- --sourcemap --watch",
+    "build:prod": "npm run build -- --minify",
+    "prepublish": "npm run build:prod"
   },
   "repository": {
     "type": "git",
@@ -20,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/NicolasRichel/js-commons/issues"
   },
-  "homepage": "https://github.com/NicolasRichel/js-commons#readme"
+  "homepage": "https://github.com/NicolasRichel/js-commons#readme",
+  "devDependencies": {
+    "esbuild": "^0.9.6"
+  }
 }
