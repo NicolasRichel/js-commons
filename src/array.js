@@ -5,7 +5,7 @@
  * @param {*} element
  * @returns {Array<*>}
  */
-export function addArrayElement(array, element) {
+function addArrayElement(array, element) {
   return array.concat(element);
 }
 
@@ -15,10 +15,10 @@ export function addArrayElement(array, element) {
  *
  * @param {Array<*>} array
  * @param {*} element
- * @param {string} key
+ * @param {String} key
  * @returns {Array<*>}
  */
-export function updateArrayElement(array, element, key = 'id') {
+function updateArrayElement(array, element, key = 'id') {
   const i = array.findIndex(x => x[key] === element[key]);
   return [ ...array.slice(0, i), element, ...array.slice(i + 1) ];
 }
@@ -29,10 +29,10 @@ export function updateArrayElement(array, element, key = 'id') {
  *
  * @param {Array<*>} array
  * @param {*} elements
- * @param {string} key
+ * @param {String} key
  * @returns {Array<*>}
  */
-export function updateArrayElements(array, elements, key = 'id') {
+function updateArrayElements(array, elements, key = 'id') {
   const obj = mapArrayToObject(elements, key);
   return array.map(
     e => !!obj[e[key]] ? { ...obj[e[key]] } : e
@@ -45,16 +45,16 @@ export function updateArrayElements(array, elements, key = 'id') {
  *
  * @param {Array<*>} array
  * @param {*} element
- * @param {string} key
+ * @param {String} key
  * @returns {Array<*>}
  */
-export function removeArrayElement(array, element, key = 'id') {
+function removeArrayElement(array, element, key = 'id') {
   const i = array.findIndex(x => x[key] === element[key]);
   return [ ...array.slice(0, i), ...array.slice(i + 1) ];
 }
 
 /**
- * Map an array to an object on wi=hich elements can be accessed by a given key ('id' by default).
+ * Map an array to an object on which elements can be accessed by a given key ('id' by default).
  * For example:
  * 
  * ```
@@ -66,11 +66,19 @@ export function removeArrayElement(array, element, key = 'id') {
  * ```
  *
  * @param {Array<*>} array
- * @param {string} key
+ * @param {String} key
  * @returns {Object}
  */
-export function mapArrayToObject(array, key = 'id') {
+function mapArrayToObject(array, key = 'id') {
   return array.map(x => ({ [x[key]]: x })).reduce(
     (obj, x) => Object.assign(obj, x), {}
   );
 }
+
+export {
+  addArrayElement,
+  mapArrayToObject,
+  removeArrayElement,
+  updateArrayElement,
+  updateArrayElements,
+};

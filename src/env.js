@@ -1,14 +1,19 @@
-export const isBrowser =
+const isBrowser =
   typeof window !== 'undefined'
   && typeof window.document !== 'undefined';
 
-export const isWebWorker =
+const isWebWorker =
   typeof self === 'object'
   && self.constructor
   && self.constructor.name === 'DedicatedWorkerGlobalScope';
 
-export const isNode =
+const isNode =
   typeof process !== 'undefined'
   && process.versions != null
   && process.versions.node != null;
 
+export {
+  isBrowser,
+  isNode,
+  isWebWorker,
+};

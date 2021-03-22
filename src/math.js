@@ -8,3 +8,7 @@ export function round(x, p = 0) {
   const n = Math.pow(10, p);
   return Math.round( x * n ) / n;
 }
+
+export {
+  round,
+};

@@ -1,5 +1,5 @@
 // Available UUID versions
-export const uuidVersions = Object.freeze({
+const uuidVersions = Object.freeze({
   V4: 'v4'
 });
 
@@ -7,8 +7,9 @@ export const uuidVersions = Object.freeze({
  * Generate an UUID using Web Crypto API.
  *
  * @param {String} version
+ * @returns {String}
  */
-export function generateUUID(version = uuidVersions.V4) {
+function generateUUID(version = uuidVersions.V4) {
   const uuid = null;
   switch (version) {
     case uuidVersions.V4:
@@ -23,7 +24,17 @@ export function generateUUID(version = uuidVersions.V4) {
 
 /**
  * Generate a RFC4122 v4 compliant UUID (using Web Crypto API).
+ *
+ * @returns {String}
  */
-export function generateUUIDv4() {
+function generateUUIDv4() {
   return generateUUID(uuidVersions.V4);
 }
+
+export {
+  // Constants
+  uuidVersions,
+  // Functions
+  generateUUID,
+  generateUUIDv4,
+};
