@@ -1,6 +1,19 @@
 # Javascript Commons
 
-Common javascript functions / objects I frequently used in my projects.
+A set of common javascript functions / objects.
+
+### Install
+
+```
+$ npm install @nrl/js-commons
+```
+
+### Development
+
+ - **(1)** Clone this repository.
+
+ - **(2)** Build: `npm run build:dev`
+
 
 # License
 
